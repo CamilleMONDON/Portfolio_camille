@@ -1,54 +1,76 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel= "stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}E-Portfolio Camille MONDON{% endblock %}</title>
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+    <link rel="stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
+
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}
+        {% block importmap %}
+            {{ importmap('app') }}
         {% endblock %}
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">barre de navigation</font></font></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Basculer la navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-              <ul class="navbar-nav me-auto">
+    {% endblock %}
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+{% set current_route = app.request.attributes.get('_route') %}
+{% set current_params = app.request.attributes.get('_route_params') ?? {} %}
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('app_home', {'_locale': app.request.locale}) }}">
+            Page d'accueil
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarColor01" aria-controls="navbarColor01"
+                aria-expanded="false" aria-label="Basculer la navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="/"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">page d'accueil 
-                    </font></font><span class="visually-hidden"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">(actuel)</font></font></span>
-                  </a>
+                    <a class="nav-link"
+                       href="{{ path('app_portfolio', {'_locale': app.request.locale}) }}">
+                        Portfolio
+                    </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/portfolio"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Portfolio</font></font></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/cv"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Tarification</font></font></a>
+                    <a class="nav-link"
+                       href="{{ path('app_cv', {'_locale': app.request.locale}) }}">
+                        Mon CV
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Dérouler</font></font></a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Action</font></font></a>
-                    <a class="dropdown-item" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Une autre action</font></font></a>
-                    <a class="dropdown-item" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Autre chose ici</font></font></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Lien séparé</font></font></a>
-                  </div>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">
+                        Langues
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"
+                           href="{{ path(current_route, current_params|merge({'_locale': 'fr'})) }}">
+                            Français
+                        </a>
+                        <a class="dropdown-item"
+                           href="{{ path(current_route, current_params|merge({'_locale': 'en'})) }}">
+                            English
+                        </a>
+                    </div>
                 </li>
-              </ul>
-              <form class="d-flex">
+            </ul>
+            <form class="d-flex">
                 <input class="form-control me-sm-2" type="search" placeholder="Recherche">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Recherche</font></font></button>
-              </form>
-            </div>
-          </div>
-        </nav>
-        {% block body %}{% endblock %}
-    </body>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                    Recherche
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+{% block body %}{% endblock %}
+
+</body>
 </html>

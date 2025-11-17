@@ -24,18 +24,18 @@ final class BlogController extends AbstractController
     {
         return $this->render('blog/portfolio.html.twig');
     }
-    #[Route('/home/en', name: 'app_home_en')]
+    #[Route('/en/home', name: 'app_home_en')]
     public function home_anglais(): Response
     {
         return $this->render('blog/en/home_en.html.twig');
     }
 
-    #[Route('/cv/en', name: 'app_cv_en')]
+    #[Route('/en/cv', name: 'app_cv_en')]
     public function CV_anglais(): Response
     {
         return $this->render('blog/en/cv_en.html.twig');
     }
-    #[Route('/portfolio/en', name: 'app_portfolio_en')]
+    #[Route('/en/portfolio', name: 'app_portfolio_en')]
     public function portfolio_anglais(): Response
     {
         return $this->render('blog/en/portfolio_en.html.twig');
