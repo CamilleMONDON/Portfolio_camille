@@ -1,76 +1,60 @@
 <!DOCTYPE html>
-<html lang="{{ app.request.locale }}">
+<html lang="{{ current_locale|default('fr') }}">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}E-Portfolio Camille MONDON{% endblock %}</title>
-
     <link rel="stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
-
     {% block stylesheets %}{% endblock %}
-    {% block javascripts %}
-        {% block importmap %}
-            {{ importmap('app') }}
-        {% endblock %}
-    {% endblock %}
 </head>
+{% set path_parts = app.request.pathinfo|split('/') %}
+{% set current_locale = path_parts[1]|default('/') %}
+{% set pure_path = '/' ~ path_parts[2:]|join('/') %}
 
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-{% set current_route = app.request.attributes.get('_route') %}
-{% set current_params = app.request.attributes.get('_route_params') ?? {} %}
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ path('app_home', {'_locale': app.request.locale}) }}">
-            Page d'accueil
+        <a class="navbar-brand" href="/{{ current_locale }}">
+            {% if current_locale == 'fr' %}Accueil{% else %}Home{% endif %}
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarColor01" aria-controls="navbarColor01"
-                aria-expanded="false" aria-label="Basculer la navigation">
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="{{ path('app_portfolio', {'_locale': app.request.locale}) }}">
-                        Portfolio
+                    <a class="nav-link" href="/{{ current_locale }}/portfolio">
+                        {% if current_locale == 'fr' %}Portfolio{% else %}Portfolio{% endif %}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="{{ path('app_cv', {'_locale': app.request.locale}) }}">
-                        Mon CV
+                    <a class="nav-link" href="/{{ current_locale }}/cv">
+                        {% if current_locale == 'fr' %}Mon CV{% else %}My Resume{% endif %}
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                       aria-haspopup="true" aria-expanded="false">
-                        Langues
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        {% if current_locale == 'fr' %}Langues{% else %}Languages{% endif %}
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item"
-                           href="{{ path(current_route, current_params|merge({'_locale': 'fr'})) }}">
-                            Français
-                        </a>
-                        <a class="dropdown-item"
-                           href="{{ path(current_route, current_params|merge({'_locale': 'en'})) }}">
-                            English
-                        </a>
+                        <a class="dropdown-item" href="/fr{{ pure_path }}">Français</a>
+                        <a class="dropdown-item" href="/en{{ pure_path }}">English</a>
                     </div>
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-sm-2" type="search" placeholder="Recherche">
+                <input class="form-control me-sm-2" type="search"
+                       placeholder="{% if current_locale == 'fr' %}Recherche{% else %}Search{% endif %}">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                    Recherche
+                    {% if current_locale == 'fr' %}Recherche{% else %}Search{% endif %}
                 </button>
             </form>
+
         </div>
     </div>
 </nav>
-
 {% block body %}{% endblock %}
-
 </body>
 </html>
