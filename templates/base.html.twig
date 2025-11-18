@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}E-Portfolio Camille MONDON{% endblock %}</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/theme.css">
     {% block stylesheets %}{% endblock %}
 </head>
 {% set path_parts = app.request.pathinfo|split('/') %}
@@ -39,22 +40,64 @@
                         {% if current_locale == 'fr' %}Langues{% else %}Languages{% endif %}
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/fr{{ pure_path }}">Français</a>
-                        <a class="dropdown-item" href="/en{{ pure_path }}">English</a>
+                        <a class="dropdown-item" href="/fr{{ pure_path }}">&#127467;&#127479; Français</a>
+                        <a class="dropdown-item" href="/en{{ pure_path }}">&#127468;&#127463; English</a>
                     </div>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-sm-2" type="search"
-                       placeholder="{% if current_locale == 'fr' %}Recherche{% else %}Search{% endif %}">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                    {% if current_locale == 'fr' %}Recherche{% else %}Search{% endif %}
-                </button>
-            </form>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        {% if current_locale == 'fr' %}Thème{% else %}Theme{% endif %}
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item theme-switch" data-theme="light"> ☀️ {% if current_locale == 'fr' %}Mode clair{% else %}Light mode{% endif %}
+                        </a>
+                        <a class="dropdown-item theme-switch" data-theme="dark"> 🌙 {% if current_locale == 'fr' %}Mode sombre{% else %}Dark mode{% endif %}
+                        </a>
+                    </div>
+                </li>
 
+            </ul>
         </div>
     </div>
 </nav>
-{% block body %}{% endblock %}
+
+<div class="container mt-4">
+    {% block body %}{% endblock %}
+</div>
+
+<div id="bottomBanner" class="navbar navbar-expand-lg bg-primary text-white fixed-bottom mt-4">
+    <div class="container-fluid justify-content-center">
+        <span>
+            {% if current_locale == 'fr' %}
+                © 2025 | Droits d'auteur | Camille MONDON | Tous droits réservés
+            {% else %}
+                © 2025 | Copyright | Camille MONDON | All rights reserved
+            {% endif %}
+        </span>
+    </div>
+</div>
+
+<script>
+    const body = document.body;
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+    }
+    document.querySelectorAll('.theme-switch').forEach(item => {
+        item.addEventListener('click', function () {
+            const theme = this.getAttribute('data-theme');
+
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="card text-white bg-primary mb-3" style="max-width: 35rem;">
+  <div class="card-header">Download CV</div>
+  <div class="card-body">
+    <p class="card-text">Please fill out this form to download the CV.</p>
+    <div class="mb-3">
+      <label class="form-label">Last Name:</label>
+      <input type="text" class="form-control" id="nom" placeholder="e.g. DURAND">
+      <div class="invalid-feedback">Please enter your last name.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">First Name:</label>
+      <input type="text" class="form-control" id="prenom" placeholder="e.g. Jean">
+      <div class="invalid-feedback">Please enter your first name.</div>
+    </div>
+    <div class="mb-3">
+    <label class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="name@example.com">
+      <div class="invalid-feedback">Email must contain an "@".</div>
+    <label class="form-label mt-3">Choose download format:</label>
+    <div class="mt-2">
+      <button type="button" class="btn btn-primary btn-lg me-2" id="btnDocx" disabled>
+        Word (.docx)
+      </button>
+
+      <button type="button" class="btn btn-primary btn-lg" id="btnPdf" disabled>
+        PDF (.pdf)
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const nom = document.getElementById("nom");
+    const prenom = document.getElementById("prenom");
+    const email = document.getElementById("email");
+    const btnDocx = document.getElementById("btnDocx");
+    const btnPdf = document.getElementById("btnPdf");
+    function checkFields() {
+        let ok = true;
+        if (nom.value.trim() === "") {
+            nom.classList.add("is-invalid");
+            ok = false;
+        } else nom.classList.remove("is-invalid");
+        if (prenom.value.trim() === "") {
+            prenom.classList.add("is-invalid");
+            ok = false;
+        } else prenom.classList.remove("is-invalid");
+        if (!email.value.includes("@")) {
+            email.classList.add("is-invalid");
+            ok = false;
+        } else {
+            email.classList.remove("is-invalid");
+        }
+        btnDocx.disabled = !ok;
+        btnPdf.disabled = !ok;
+    }
+    nom.addEventListener("input", checkFields);
+    prenom.addEventListener("input", checkFields);
+    email.addEventListener("input", checkFields);
+    btnDocx.addEventListener("click", function () {
+        window.location.href = "/document/CV.docx";
+    });
+    btnPdf.addEventListener("click", function () {
+        window.location.href = "/document/CV.pdf";
+    });
+});
+</script>
+
+{% endblock %}
