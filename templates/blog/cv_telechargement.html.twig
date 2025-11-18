@@ -2,74 +2,102 @@
 
 {% block body %}
 
-<div class="card text-white bg-primary mb-3" style="max-width: 35rem;">
-  <div class="card-header">Téléchargement du CV</div>
-  <div class="card-body">
-    <p class="card-text">Merci de remplir ce questionnaire pour télécharger le CV.</p>
-    <div class="mb-3">
-      <label class="form-label">Nom :</label>
-      <input type="text" class="form-control" id="nom" placeholder="ex : DURAND">
-      <div class="invalid-feedback">Veuillez entrer votre nom.</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="progressBar"></div>
+</div>
+<br>
+<div class="col-md-6 mx-auto">
+    <div class="card text-white bg-primary mb-6">
+        <div class="card-header">Téléchargement du CV</div>
+        <div class="card-body">
+            <p class="card-text">Merci de remplir ce questionnaire pour télécharger le CV.</p>
+            <div class="mb-3">
+                <label class="form-label">Nom :</label>
+                <input type="text" class="form-control" id="nom" placeholder="ex : DURAND">
+                <div class="invalid-feedback">Veuillez entrer votre nom.</div>
+            </div>
+            <div class="mb-3">
+            <label class="form-label">Prénom :</label>
+            <input type="text" class="form-control" id="prenom" placeholder="ex : Jean">
+            <div class="invalid-feedback">Veuillez entrer votre prénom.</div>
+            </div>
+        <div class="mb-3">
+            <label class="email">Adresse mail</label>
+            <input type="email" class="form-control" id="email" placeholder="nom.prénom@example.com">
+            <div class="invalid-feedback">L'adresse doit contenir un "@".</div>
+        </div>
+            <label class="form-label mt-3">Choisissez le format :</label>
+            <table class="table table-hover">
+                <tr class="table-active">
+                    <tbody>
+                        <tr>
+                            <div class="mt-2 d-flex gap-3">
+                                <td><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><button type="button" class="btn btn-primary btn-lg" id="btnDocx" disabled>Word (.docx)</button>
+                                <button type="button" class="btn btn-primary btn-lg" id="btnPdf" disabled>PDF (.pdf)</button>
+                                </font></font></td>
+                                <td><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><a href="/fr/cv" class="btn btn-primary btn-lg">← Retour au cv</a></font></font></td>
+                            </div>
+                        </tr>
+                    </tbody>
+                </tr>
+            </table>
+        </div>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Prénom :</label>
-      <input type="text" class="form-control" id="prenom" placeholder="ex : Jean">
-      <div class="invalid-feedback">Veuillez entrer votre prénom.</div>
-    </div>
-    <div class="mb-3">
-      <label class="email">Adresse mail</label>
-      <input type="email" class="form-control" id="email" placeholder="nom.prénom@example.com">
-      <div class="invalid-feedback">L'adresse doit contenir un "@".</div>
-    </div>
-    <label class="form-label mt-3">Choisissez le format :</label>
-    <div class="mt-2">
-      <button type="button" class="btn btn-primary btn-lg me-2" id="btnDocx" disabled>
-        Word (.docx)
-      </button>
-      <button type="button" class="btn btn-primary btn-lg" id="btnPdf" disabled>
-        PDF (.pdf)
-      </button>
-    </div>
-  </div>
 </div>
 
+<!--partie javascript, pas touche !-->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
-    const nom = document.getElementById("nom");
-    const prenom = document.getElementById("prenom");
-    const email = document.getElementById("email");
-    const btnDocx = document.getElementById("btnDocx");
-    const btnPdf = document.getElementById("btnPdf");
-    function verifierChamps() {
+    const nom = document.getElementById("nom");
+    const prenom = document.getElementById("prenom");
+    const email = document.getElementById("email");
+    const btnDocx = document.getElementById("btnDocx");
+    const btnPdf = document.getElementById("btnPdf");
+    const progressBar = document.getElementById("progressBar"); 
+    const totalChamps = 3; 
+    function calculerProgression() {
+        let champsValides = 0;
         let ok = true;
-        if (nom.value.trim() === "") {
-            nom.classList.add("is-invalid");
-            ok = false;
-        } else nom.classList.remove("is-invalid");
-        if (prenom.value.trim() === "") {
-            prenom.classList.add("is-invalid");
-            ok = false;
-        } else prenom.classList.remove("is-invalid");
-        if (!email.value.includes("@")) {
-            email.classList.add("is-invalid");
-            ok = false;
-        } else {
-            email.classList.remove("is-invalid");
+        if (nom.value.trim() === "") {
+            nom.classList.add("is-invalid");
+            ok = false;
+        } else {
+            champsValides++;
+            nom.classList.remove("is-invalid");
         }
-
-        // Active/désactive les boutons. NE PAS TOUCHE, CA MARCHE !!
-        btnDocx.disabled = !ok;
-        btnPdf.disabled = !ok;
-    }
-    nom.addEventListener("input", verifierChamps);
-    prenom.addEventListener("input", verifierChamps);
-    email.addEventListener("input", verifierChamps);
-    btnDocx.addEventListener("click", function () {
-    window.location.href = "/document/CV.docx";
-    });
-    btnPdf.addEventListener("click", function () {
-    window.location.href = "/document/CV.pdf";
+        if (prenom.value.trim() === "") {
+            prenom.classList.add("is-invalid");
+            ok = false;
+        } else {
+            champsValides++;
+            prenom.classList.remove("is-invalid");
+        }
+        if (!email.value.includes("@")) {
+            email.classList.add("is-invalid");
+            ok = false;
+        } else {
+            champsValides++;
+            email.classList.remove("is-invalid");
+        }
+        const progression = (champsValides / totalChamps) * 100;
+        progressBar.style.width = progression + "%";
+        progressBar.setAttribute("aria-valuenow", progression);
+        return ok;
+    }
+    function verifierChamps() {
+        const ok = calculerProgression();
+        btnDocx.disabled = !ok;
+        btnPdf.disabled = !ok;
+    }
+    verifierChamps();
+    nom.addEventListener("input", verifierChamps);
+    prenom.addEventListener("input", verifierChamps);
+    email.addEventListener("input", verifierChamps);
+    btnDocx.addEventListener("click", function () {
+    window.location.href = "/document/CV.docx";
+    });
+    btnPdf.addEventListener("click", function () {
+    window.location.href = "/document/CV.pdf";
 });
 
 });

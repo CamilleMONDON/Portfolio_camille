@@ -3,13 +3,32 @@
     --bg-color: #A6F0FF;
     --text-color: #052a38;
     --card-bg: rgba(255, 255, 255, 0.65);
-}
 
+    --input-bg: #ffffff;
+    --input-border: #999;
+    --input-text: #052a38;
+
+    --button-bg: #0d6efd;
+    --button-text: #ffffff;
+
+    --table-bg: rgba(255, 255, 255, 0.65);
+    --table-text: #052a38;
+}
 
 .dark-mode {
     --bg-color: #052a38;
     --text-color: #A6F0FF;
     --card-bg: rgba(0, 26, 34, 0.7);
+
+    --input-bg: #033341;
+    --input-border: #0b708d;
+    --input-text: #A6F0FF;
+
+    --button-bg: #0d6efd;
+    --button-text: #ffffff;
+
+    --table-bg: rgba(0, 26, 34, 0.7);
+    --table-text: #A6F0FF;
 }
 
 .card {
