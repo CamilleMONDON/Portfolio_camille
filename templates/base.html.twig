@@ -67,17 +67,6 @@
     {% block body %}{% endblock %}
 </div>
 
-<div id="bottomBanner" class="navbar navbar-expand-lg bg-primary text-white fixed-bottom mt-4">
-    <div class="container-fluid justify-content-center">
-        <span>
-            {% if current_locale == 'fr' %}
-                © 2025 | Droits d'auteur | Camille MONDON | Tous droits réservés
-            {% else %}
-                © 2025 | Copyright | Camille MONDON | All rights reserved
-            {% endif %}
-        </span>
-    </div>
-</div>
 
 <script>
     const body = document.body;
@@ -98,6 +87,18 @@
         });
     });
 </script>
-
 </body>
+<footer>
+    <div id="bottomBanner" class="navbar navbar-expand-lg bg-primary text-white fixed-bottom mt-4">
+        <div class="container-fluid justify-content-center">
+            <span>
+                {% if current_locale == 'fr' %}
+                    © 2025 | Droits d'auteur | Camille MONDON | Tous droits réservés
+                {% else %}
+                    © 2025 | Copyright | Camille MONDON | All rights reserved
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</footer>
 </html>

@@ -11,6 +11,25 @@
     --text-color: #A6F0FF;
     --card-bg: rgba(0, 26, 34, 0.7);
 }
+
+.card {
+    background-color: var(--bs-card-bg);
+    color: var(--bs-card-color);
+}
+.list-group-item {
+    background-color: var(--bs-card-bg);
+    color: var(--bs-card-color);
+    background: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+.card-subtitle {
+    background-color: var(--bs-card-bg);
+    color: var(--bs-card-color);
+    background: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+
 .navbar.navbar-expand-lg.bg-primary[data-bs-theme="light"] .nav-link,
 .navbar.navbar-expand-lg.bg-primary[data-bs-theme="light"] .navbar-brand {
     color: #ffff0f !important; 

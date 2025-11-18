@@ -1,13 +1,63 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-bg-primary mb-3">
+                <h3 class="card-header">Informations personnelles</h3>
+                <div class="card-body">
+                    <h4 class="card-title">MONDON Camille</h4>
+                    <h6 class="card-subtitle text-muted">Étudiant en BUT Réseaux & Télécommunications</h6>
+                </div>
+                <img src="/document/photoCV.jpg" alt="Photo de Camille" class="img-fluid rounded">
+                </svg>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">📱 06 56 66 11 39</li>
+                    <li class="list-group-item">✉️ camille.mondon42@gmail.com</li>
+                    <li class="list-group-item">📍 12 boulevard de Belgique, 42300 Roanne</li>
+                    <li class="list-group-item">📆 20/07/2007</li>
+                </ul>
+                <div class="card-body">
+                    <div class="card border-primary mb-3">
+                        <div class="card-header">Compétences</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Travail en groupe<br>Autonomie<br>Sérieux<br>Créatif<br>Communication<br>Esprit critique<br>+compétence technique
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card border-primary mb-3">
+                        <div class="card-header">Centres d'intérêt</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                La musique : j’ai pratiqué 5 ans de Violon et 10 ans de percussions, dans un groupe.<br>
+                                Jeu de société : création de mon propre jeu de stratégie sur plateau.<br>
+                                Randonnée/Marche : marche plusieurs fois par semaine, souvent seul.<br>
+                                Animations Halloween pour le quartier avec ma famille depuis plus de 10 ans.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="CV" href="/fr/cv/telechargement">
+                        <button type="button" class="btn btn-primary btn-lg">Télécharger le CV</button>
+                    </a>
+                </div>
+            </div>
+        </div>
 
+        <!-- Colonne de droite : contenu principal -->
+        <div class="col-md-9">
+            <h1>Le poste de mes rêves : professeur de NSI</h1>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p class="card-text">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<h1> bonjour ! </h1>
-<h2>Bienvenue sur mon CV !</h2>
-</bn>
-<a class="CV" href="/fr/cv/telechargement">
-<button type="button" class="btn btn-primary btn-lg">téléchargement</button>
-</a>
-
 {% endblock %}
