@@ -2,7 +2,7 @@
 :root {
     --bg-color: #A6F0FF;
     --text-color: #052a38;
-    --card-bg: #a6f0ff2c;
+    --card-bg: #43dcfb;
 
     --input-bg: #A6ffff;
     --input-border: #999;
@@ -15,7 +15,7 @@
 .dark-mode {
     --bg-color: #052a38;
     --text-color: #A6F0FF;
-    --card-bg: #001a22b3;
+    --card-bg: #033341;
 
     --input-bg: #033341;
     --input-border: #0b708d;
@@ -30,7 +30,7 @@ body  {
     color: var(--text-color) !important;
 }
 
-.card {
+.card-body {
     background-color: var(--card-bg) !important;
     color: var(--text-color) !important;
     border-color: var(--card-border) !important;
