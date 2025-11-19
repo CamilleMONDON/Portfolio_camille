@@ -27,6 +27,19 @@ final class BlogController extends AbstractController
         return $this->render('blog/cv.html.twig');
     }
 
+    #[Route('fr/cv/formations', name: 'app_cv_formations')]
+    public function CV_formations(): Response
+    {
+        return $this->render('blog/cv_formations.html.twig');
+    }
+    
+    #[Route('fr/cv/experience', name: 'app_cv_exp')]
+    public function CV_exp(): Response
+    {
+        return $this->render('blog/cv_exp.html.twig');
+    }
+
+
     #[Route('/fr/cv/telechargement', name: 'app_cv_telechargement')]
     public function CV_D(): Response
     {
@@ -50,6 +63,17 @@ final class BlogController extends AbstractController
     public function CV_anglais(): Response
     {
         return $this->render('blog/en/cv_en.html.twig');
+    }
+    #[Route('en/cv/formations', name: 'app_cv_en_formations')]
+    public function CV_en_formations(): Response
+    {
+        return $this->render('blog/en/cv_formations.html.twig');
+    }
+    
+    #[Route('en/cv/experience', name: 'app_cv_en_exp')]
+    public function CV__en_exp(): Response
+    {
+        return $this->render('blog/en/cv_exp.html.twig');
     }
     
     #[Route('/en/cv/telechargement', name: 'app_cv_en_telechargement')]
