@@ -2,10 +2,27 @@
 
 {% block body %}
 
-<h1> Bonjour ! </h1>
+<h1 class="mb-3 text-primary"> Bonjour ! </h1>
 <h2>Bienvenue sur mon e-portfolio !</h2>
 <h3>Je suis Camille MONDON </p> Je suis en groupe TP B2</h3>
-
+<br>
+<div class="container">
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header mb-3 text-primary" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Pour en savoir plus
+                </button>   
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>Découvrez davantage d’informations sur mes loisirs.</strong> 
+                <br>
+                <a href="/fr/Pour_En_Savoir_+" class="btn btn-primary">En savoir plus</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 

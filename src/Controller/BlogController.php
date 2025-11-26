@@ -20,6 +20,11 @@ final class BlogController extends AbstractController
     {
         return $this->render('blog/home.html.twig');
     }
+    #[Route('/fr/Pour_En_Savoir_+', name: 'app_PES+')]
+    public function PourEnSavoirPlus(): Response
+    {
+        return $this->render('blog/PourEnSavoir+.html.twig');
+    }
 
     #[Route('fr/cv', name: 'app_cv')]
     public function CV(): Response
@@ -59,6 +64,12 @@ final class BlogController extends AbstractController
         return $this->render('blog/en/home_en.html.twig');
     }
 
+    #[Route('/en/Pour_En_Savoir_+', name: 'app_en_PES+')]
+    public function PourEnSavoirPlus_en(): Response
+    {
+        return $this->render('blog/en/PourEnSavoir+.html.twig');
+    }
+
     #[Route('/en/cv', name: 'app_cv_en')]
     public function CV_anglais(): Response
     {
@@ -87,4 +98,5 @@ final class BlogController extends AbstractController
     {
         return $this->render('blog/en/portfolio_en.html.twig');
     }
+
 }

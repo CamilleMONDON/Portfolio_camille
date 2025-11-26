@@ -5,7 +5,6 @@
     --card-bg: #43dcfb;
 
     --input-bg: #A6ffff;
-    --input-border: #999;
     --input-text: #052a38;
 
     --table-bg: #A6F0FF;
@@ -18,7 +17,6 @@
     --card-bg: #033341;
 
     --input-bg: #033341;
-    --input-border: #0b708d;
     --input-text: #A6F0FF;
 
     --table-bg: #033341;
@@ -30,10 +28,10 @@ body  {
     color: var(--text-color) !important;
 }
 
+
 .card-body {
     background-color: var(--card-bg) !important;
     color: var(--text-color) !important;
-    border-color: var(--card-border) !important;
 }
 
 .dark-mode #nom {
@@ -58,7 +56,6 @@ body  {
 input, select, textarea {
     background-color: var(--input-bg) !important;
     color: var(--input-text) !important;
-    border-color: var(--input-border) !important;
 }
 
 .table, .table tr, .table td, .table th {
