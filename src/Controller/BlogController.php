@@ -51,13 +51,30 @@ final class BlogController extends AbstractController
         return $this->render('blog/cv_telechargement.html.twig');
     }
     
-    #[Route('fr/portfolio', name: 'app_portfolio')]
+    #[Route('/fr/portfolio', name: 'app_portfolio')]
     public function portfolio(): Response
     {
         return $this->render('blog/portfolio.html.twig');
     }
 
+    #[Route('/fr/administrer', name: 'app_administrer')]
+    public function administrer(): Response
+    {
+        return $this->render('blog/administrer.html.twig');
+    }
+    
+    #[Route('/fr/connecter', name: 'app_connecter')]
+    public function connecter(): Response
+    {
+        return $this->render('blog/connecter.html.twig');
+    }
 
+    #[Route('/fr/créer', name: 'app_créer')]
+    public function créer(): Response
+    {
+        return $this->render('blog/créer.html.twig');
+    }
+    
     #[Route('/en', name: 'app_home_en')]
     public function home_anglais(): Response
     {
@@ -99,4 +116,20 @@ final class BlogController extends AbstractController
         return $this->render('blog/en/portfolio_en.html.twig');
     }
 
+    #[Route('/en/administrer', name: 'app_administrer_en')]
+    public function administrer_en(): Response
+    {
+        return $this->render('blog/en/administrer.html.twig');
+    }
+
+    #[Route('/en/connecter', name: 'app_connecter_en')]
+    public function connecter_en(): Response
+    {
+        return $this->render('blog/en/connecter.html.twig');
+    }
+    #[Route('/en/créer', name: 'app_créer_en')]
+    public function créer_en(): Response
+    {
+        return $this->render('blog/en/créer.html.twig');
+    }
 }
