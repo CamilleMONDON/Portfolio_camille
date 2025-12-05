@@ -2,23 +2,58 @@
 
 {% block body %}
 
-<h1 class="mb-3 text-primary"> Bonjour ! </h1>
-<h2>Bienvenue sur mon e-portfolio !</h2>
-<h3>Je suis Camille MONDON </p> Je suis en groupe TP B2</h3>
+<div class="container text-center mt-5">
+    <h1 class="mb-2 text-primary"> Bonjour 👋 </h1>
+    <h2>Bienvenue sur mon e-portfolio !</h2>
+    <h3>Je suis Camille MONDON, étudiant à l'IUT de Roanne et je fais partie du groupe B2</h3>
+    </div>
+<br>
+<h5> Par où souhaitez-vous commencer ? </h5>
 <br>
 <div class="container">
-    <div class="list-group">
-        <a href="/fr/Pour_En_Savoir_+" 
-           class="list-group-item list-group-item-action flex-column align-items-start active"
-           style="background-color: #E95420 !important; border-color: #E95420 !important; color: white !important;">
-            <div class="d-flex w-100 justify-content-between">
-                <h4 class="mb-1">mes passe-temps :</h4>
-            </div>
-            <br>
-            <p class="mb-1"> Pour avoir plus d'informations sur mes passe-temps, cliquez ici pour en savoir plus !</p>
-        </a>
+    <div class="row g-3">
+        <div class="col-6 list-group">
+            <a href="/fr/cv" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-1 text-primary">Mon CV</h2>
+                </div>
+                <p class="mb-2">Accédez à mon CV avec mes formations, mes experiences professionnelles et mes compétences. Vous pouvez même télécharger le CV en .pdf et/ou en .docx</p>
+            </a>
+        </div>
+        <br>
+        <div class="col-6 list-group">
+            <a href="/fr/portfolio" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-2 text-primary">Mon portfolio</h2>
+                </div>
+                <p class="mb-1">Accédez à mon portfolio de compétences liée à mon BUT Réseaux & Télécommunications</p>
+            </a>
+        </div>
+    </div>
+    <br>
+    <h5> Par où continuer ? </h5>
+    <br>
+    <div class="row g-3">
+        <div class="col-6 list-group ">
+            <a href="/fr/Pour_En_Savoir_+" class="list-group-item list-group-item-action flex-column align-items-start active" style="background-color: #E95420 !important; border-color: #E95420 !important; color: white !important;">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-2">Mes passe-temps :</h2>
+                </div>
+                <p class="mb-1"> Pour avoir plus d'informations sur mes passe-temps, cliquez ici !</p>
+            </a>
+        </div>
+        <br>
+        <div class="col-6 list-group">
+            <a href="mailto:camille.mondon42@gmail.com" class="list-group-item list-group-item-action flex-column align-items-start active" style="background-color: #E95420 !important; border-color: #E95420 !important; color: white !important;">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-2">Me contacter par mail</h2>
+                </div>
+                <p class="mb-1">Cliquez ici pour me contacter par mail.<br> Vous pouvez aussi me joindre au +33 6 56 66 11 39.</p>
+            </a>
+        </div>
     </div>
 </div>
+
 {% endblock %}
 
 

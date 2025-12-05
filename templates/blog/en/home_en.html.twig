@@ -2,20 +2,56 @@
 
 {% block body %}
 
-<h1> Hello ! </h1>
-<h2>Welcome on my e-portfolio !</h2>
-<h3>My name is Camille MONDON </p> I am in TP B2 group</h3>
+<div class="container text-center mt-5">
+    <h1 class="mb-2 text-primary"> Hello 👋 </h1>
+    <h2>Welcome to my e-portfolio!</h2>
+    <h3>I am Camille MONDON, a student at the IUT of Roanne and I am part of group B2</h3>
+    </div>
+<br>
+<h5> Where would you like to start? </h5>
+<br>
 <div class="container">
-    <div class="list-group">
-        <a href="/en/Pour_En_Savoir_+" 
-           class="list-group-item list-group-item-action flex-column align-items-start active"
-           style="background-color: #E95420 !important; border-color: #E95420 !important; color: white !important;">
-            <div class="d-flex w-100 justify-content-between">
-                <h4 class="mb-1">My hobbies:</h4>
-            </div>
-            <br>
-            <p class="mb-1"> For more information about my hobbies, click here to learn more!</p>
-        </a>
+    <div class="row g-3">
+        <div class="col-6 list-group">
+            <a href="/fr/cv" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-1 text-primary">My Resume</h2>
+                </div>
+                <p class="mb-2">Access my resume with my education, professional experience and skills. You can even download the resume as a .pdf and/or .docx</p>
+            </a>
+        </div>
+        <br>
+        <div class="col-6 list-group">
+            <a href="/fr/portfolio" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-2 text-primary">My Portfolio</h2>
+                </div>
+                <p class="mb-1">Access my skills portfolio related to my BUT Networks & Telecommunications</p>
+            </a>
+        </div>
+    </div>
+    <br>
+    <h5> Where to continue? </h5>
+    <br>
+    <div class="row g-3">
+        <div class="col-6 list-group ">
+            <a href="/fr/Pour_En_Savoir_+" class="list-group-item list-group-item-action flex-column align-items-start active" style="background-color: #E95420 !important; border-color: #E95420 !important; color: white !important;">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-2">My hobbies:</h2>
+                </div>
+                <p class="mb-1"> For more information about my hobbies, click here!</p>
+            </a>
+        </div>
+        <br>
+        <div class="col-6 list-group">
+            <a href="mailto:camille.mondon42@gmail.com" class="list-group-item list-group-item-action flex-column align-items-start active" style="background-color: #E95420 !important; border-color: #E95420 !important; color: white !important;">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-2">Contact me by email</h2>
+                </div>
+                <p class="mb-1">Click here to contact me by email.<br> You can also reach me at +33 6 56 66 11 39.</p>
+            </a>
+        </div>
     </div>
 </div>
+
 {% endblock %}
