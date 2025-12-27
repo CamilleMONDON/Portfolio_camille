@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Connecting Businesses and Users</h1>
+<p>Reference project: Complete renovation of the network infrastructure for room G007 (SAé 1.03).</p>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#01" aria-selected="true" role="tab">Technical Expertise and Qualification (AC12.01)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#02" aria-selected="false" tabindex="-1" role="tab">Network Architecture Design (AC12.03)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#03" aria-selected="false" tabindex="-1" role="tab">Professional Communication and Client Relations (AC12.05)</a>
+  </li>
+</ul>
+
+
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade show active border-primary" style="background-color: var(--card-bg)" id="01" role="tabpanel">
+    <p>To guarantee quality of service to users, I performed a rigorous qualification of the existing setup and environment:</br> </br>Copper infrastructure audit: Expert use of the Fluke CableIQ qualifier to validate link compliance (continuity, length < 90m) and certify their capacity to support the 1000BASE-T protocol (Gigabit Ethernet).</br> </br>Wi-Fi Optimization: Spectral analysis of the environment to map coverage. I conducted a detailed study of the SNR (Signal-to-Noise Ratio) to select the most efficient channels (1, 6, 11) and ensure a stable signal, beyond simple reception power.</p>
+  </div>
+  <div class="tab-pane fade border-primary" id="02" style="background-color: var(--card-bg)" role="tabpanel">
+    <p>I designed the physical engineering of the deployment by anticipating future needs (installation sustainability):</br> </br>Precise sizing: Calculation of material requirements for a large-scale installation (3 km of cables, 58 RJ45 jacks, 2 patch panels).</br> </br>Estimation methodology: Development of a reliable calculation method based on building scale plans (average distance + technical safety margin) to make orders reliable.</br> </br>Strategic choices: Selection of ISO/IEC 11801 standard equipment (Legrand, Category 6, Class E) to ensure network durability.</p>
+  </div>
+  <div class="tab-pane fade border-primary" id="03" style="background-color: var(--card-bg)" role="tabpanel">
+    <p>I acted as the interface between the technical side and the decision-maker ("the client") to validate the project launch: </br> </br>Budgeting: Drafting a formal and detailed quote (€17,471 incl. VAT). I integrated a realistic labor estimate (based on a 35h simulation at a qualified technician rate) to make the offer credible.</br> </br>Commercial argumentation: Presentation of the technical and financial file, adapting my vocabulary and posture to convince the department head of the investment necessity.</p>
+  </div>
+</div>
+<div class="card border-primary mb-6" style="max-width: 200rem;">
+  <div class="card-header text-white bg-primary">Competency Summary</div>
+  <div class="card-body">
+    <p class="card-text">Through this project, I demonstrated my ability to connect user needs (fast and reliable connection) with business constraints (budget, standards, architecture).</p>
+    <p class="card-text">Key takeaways:</p>
+    <p class="card-text">Mastery of certification tools (Fluke) is essential for transforming a physical installation into a reliable service.</p>
+    <p class="card-text">Good technical communication is not limited to transmitting data, but translating it into decision-making elements (costs, deadlines, quality) for the client.</p>
+  </div>
+</div>
+<br>
+<div class="container-fluid mb-12">
+    <div class="row g-2">
+        <div class="list-group col-6">
+            <a href="/en/administrer">
+                <button type="button" class="btn btn-primary col-12">Go to: Administer Networks and the Internet</button>
+            </a>
+        </div>
+        <div class="list-group col-6">
+            <a href="/en/créer">
+                <button type="button" class="btn btn-primary col-12">Go to: Creating IT tools and applications for R&T</button>
+            </a>
+        </div>
+    </div>
+</div>
+<br> <br>
+{% endblock %}

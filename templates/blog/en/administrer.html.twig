@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>Administer Networks and the Internet</h1>
+<p>Reference project: Introduction to computer networks (SAé 1.02).</p>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" data-bs-toggle="tab" href="#01" aria-selected="true" role="tab"> AC11.01</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#02" aria-selected="false" tabindex="-1" role="tab">AC11.02</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#03" aria-selected="false" tabindex="-1" role="tab">AC11.03</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#04" aria-selected="false" tabindex="-1" role="tab">AC11.04</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#05" aria-selected="false" tabindex="-1" role="tab">AC11.05</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#06" aria-selected="false" tabindex="-1" role="tab">AC11.06</a>
+  </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade show active" style="background-color: var(--card-bg)" id="01" role="tabpanel">
+    <h4>Master the fundamental laws of electricity to work on network and telecommunications equipment (AC11.01)</h4>
+    <p> As part of the physical network audit, I had to work on active equipment (Cisco 2960 switches). <br> <br> I became aware of the electrical risks related to network and telecommunications equipment. My interventions were carried out safely during physical cabling tasks.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="02" role="tabpanel">
+    <h4>Understand digital systems architecture and information coding principles (AC11.02)</h4>
+    <p> Securing access to company network equipment. <br> <br> I configured console line, privileged exec mode (enable), and virtual lines (VTY) passwords on the switches. I can identify the link between these different passwords and the corresponding access modes. <br> <br> Ultimately, all active equipment is secured and accessible remotely via the SSH protocol, in accordance with the specifications.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="03" role="tabpanel">
+    <h4>Configure basic local area network functions (AC11.03)</h4>
+    <p>Simulation and extension of the local area network on Cisco Packet Tracer. <br> <br> IP Addressing: Configuration and justification of the IPv4 addressing plan (addresses, masks, gateways) for new workstations.<br> <br> VLANs: Creation and configuration of specific VLANs (VLAN 70 for production, 71 for sales, 72 for HR) in access and trunk modes. <br> <br>Ultimately resulting in a functional topology allowing traffic separation and dynamic addressing via a DHCP server.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="04" role="tabpanel">
+    <h4>Master the roles and fundamental principles of operating systems to interact with them for network and services configuration and administration (AC11.04)</h4>
+    <p>Frame analysis and discovery of the existing topology. <br> <br> Frame Analysis: Using Wireshark to analyze ICMP, ARP, and CDP traffic to identify active IP addresses and infrastructure equipment. <br> <br>Topology: Autonomous identification of the logical and physical topology (links between S1, S4, and the router) from network captures and configuration files. <br> <br>Ultimately resulting in accurate network mapping without prior documentation.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="05" role="tabpanel">
+    <h4>Identify local area network malfunctions (AC11.05)</h4>
+    <p>Resolving problems encountered during the implementation of the backup server.<br> <br> I conducted a preliminary study (topology, addressing plan) and used diagnostic tools (command lines, analyzers) to solve configuration errors independently.<br> <br> Ultimately resulting in the identification and correction of a Windows Firewall block on port 69, allowing TFTP transfers to function correctly.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="06" role="tabpanel">
+    <h4>Install a client workstation (AC11.06)</h4>
+    <p>Installation and configuration of a TFTP server on a Windows administration workstation and installation of three client machines under Ubuntu.<br> <br> Installation of a client workstation with a correctly connected and usable TCP/IPv4 protocol. I was able to justify my installation choices, particularly for the Tftpd64 application and the necessary security exceptions. <br> <br>Ultimately resulting in an operational administration workstation capable of receiving and storing switch configuration files.</p>
+  </div>
+</div>
+<div class="card border-primary mb-6" style="max-width: 200rem;">
+  <div class="card-header text-white bg-primary">Competency Summary</div>
+  <div class="card-body">
+    <p class="card-text">Through this project, I demonstrated my ability to map an existing network without documentation to adapt it to the company's growth needs. I was able to transform raw data into a secure and scalable infrastructure.</p>
+    <p class="card-text">Key takeaways:</p>
+    <p class="card-text">Frame analysis (Wireshark) and simulation (Packet Tracer) are essential for transforming raw data into a reliable architecture. </p>
+    <p class="card-text"> Accurate technical documentation is the key to ensuring maintenance and future evolution of the IT infrastructure.</p>
+    <p class="card-text"> Access protection (SSH) and flow isolation via VLANs are absolute priorities for securing the company.</p>
+    <p class="card-text"> Autonomy when facing failures, such as configuring the firewall for the TFTP service, is crucial to ensuring service availability.</p>
+  </div>
+</div>
+<br>
+
+<div class="container-fluid mb-12">
+    <div class="row g-2">
+        <div class="list-group col-6">
+            <a href="/en/connecter">
+                <button type="button" class="btn btn-primary col-12">Go to: Connecting businesses and users</button>
+            </a>
+        </div>
+        <div class="list-group col-6">
+            <a href="/en/créer">
+                <button type="button" class="btn btn-primary col-12">Go to: Creating IT tools and applications for R&T</button>
+            </a>
+        </div>
+    </div>
+</div>
+<br> <br>
+
+{% endblock %}

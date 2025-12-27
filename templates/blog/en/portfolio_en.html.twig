@@ -2,7 +2,37 @@
 
 {% block body %}
 
-<h1> hello ! </h1>
-<h2>wellcome on my portfolio !</h2>
-
+<h1>Welcome to my BUT R&T Portfolio</h1>
+<h2>The list of competencies is grouped into 3 categories:</h2>
+<div class="container-fluid mb-12"> 
+    <div class="row g-2">
+        <div class="list-group col-4">
+            <a href="/en/administrer" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-1 text-primary"> Administer Networks and the Internet</h2>
+                </div>
+                <p class="mb-1"><br> This competency aims to enable students to choose appropriate network solutions and technologies, configure basic local area network functions, master the fundamental roles of operating systems for administration, and identify network malfunctions while respecting IT security principles. </p>
+                <small class="text-muted">Extract from the National Curriculum</small>
+            </a>
+        </div>
+        <div class="list-group col-4">
+            <a href="/en/connecter" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-1 text-primary"> Connecting Businesses and Users</h2>
+                </div>
+                <p class="mb-1"><br> This competency focuses on acquiring the knowledge necessary to deploy transmission systems (such as ToIP and physical media), characterize links (signal measurement), and propose adapted connection solutions, taking into account scientific, technical, and environmental aspects. </p>
+                <small class="text-muted">Extract from the National Curriculum</small>
+            </a>
+        </div>
+        <div class="list-group col-4">
+            <a href="/en/créer" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                    <h2 class="mb-1 text-primary">Creating IT Tools and Applications for R&T</h2>
+                </div>
+                <p class="mb-1"><br> The objective is to train students to develop digital tools for networks and telecommunications, notably by using algorithms, programming, and knowledge of Web technologies. Students learn to use a computer system, read/modify programs, process data, and integrate into a collaborative work environment.</p>
+                <small class="text-muted">Extract from the National Curriculum</small>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
