@@ -1,10 +1,42 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
 <h1>Connecter les entreprises et les usagers</h1>
-<p>salut</p>
+<p>Projet de référence : Rénovation complète de l'infrastructure réseau de la salle G007 (SAé 1.03).</p>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#01" aria-selected="true" role="tab">Expertise Technique et Qualification (AC12.01)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#02" aria-selected="false" tabindex="-1" role="tab">Conception d'Architecture Réseau (AC12.03)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#03" aria-selected="false" tabindex="-1" role="tab">Communication Professionnelle et Relation Client (AC12.05)</a>
+  </li>
+</ul>
 
+
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade show active border-primary" style="background-color: var(--card-bg)" id="01" role="tabpanel">
+    <p>Pour garantir la qualité de service aux usagers, j'ai réalisé une qualification rigoureuse de l'existant et de l'environnement :</br> </br>Audit de l'infrastructure cuivre : Utilisation experte du qualificateur Fluke CableIQ pour valider la conformité des liens (continuité, longueur < 90m) et certifier leur capacité à supporter le protocole 1000BASE-T (Gigabit Ethernet).</br> </br>Optimisation Wi-Fi : Analyse spectrale de l'environnement pour cartographier la couverture. J'ai réalisé une étude fine du SNR (Signal-to-Noise Ratio) pour sélectionner les canaux les plus performants (1, 6, 11) et garantir un signal stable, au-delà de la simple puissance de réception.</p>
+  </div>
+  <div class="tab-pane fade border-primary" id="02" style="background-color: var(--card-bg)" role="tabpanel">
+    <p>J'ai conçu l'ingénierie physique du déploiement en anticipant les besoins futurs (pérennité de l'installation) :</br> </br>Dimensionnement précis : Calcul des besoins matériels pour une installation d'envergure (3 km de câbles, 58 prises RJ45, 2 baies de brassage).</br> </br>Méthodologie d'estimation : Élaboration d'une méthode de calcul fiable basée sur les plans à l'échelle du bâtiment (distance moyenne + marge de sécurité technique) pour fiabiliser les commandes.</br> </br>Choix stratégiques : Sélection de matériel de norme ISO/IEC 11801 (Legrand, Catégorie 6, Classe E) pour assurer la durabilité du réseau.</p>
+  </div>
+  <div class="tab-pane fade border-primary" id="03" style="background-color: var(--card-bg)" role="tabpanel">
+    <p>J'ai assuré l'interface entre la technique et le décideur ("le client") pour valider le lancement du projet : </br> </br>Élaboration budgétaire : Rédaction d'un devis formel et détaillé (17 471 € TTC). J'ai intégré une estimation réaliste de la main-d'œuvre (basée sur une simulation de 35h à un tarif technicien qualifié) pour crédibiliser l'offre.</br> </br>Argumentation commerciale : Présentation du dossier technique et financier, en adaptant mon vocabulaire et ma posture pour convaincre le chef de département de la nécessité de l'investissement.</p>
+  </div>
+</div>
+<div class="card border-primary mb-6" style="max-width: 200rem;">
+  <div class="card-header text-white bg-primary">Bilan de la compétence</div>
+  <div class="card-body">
+    <p class="card-text">À travers ce projet, j'ai démontré ma capacité à relier les besoins des usagers (connexion rapide et fiable) aux contraintes de l'entreprise (budget, normes, architecture).</p>
+    <p class="card-text">Ce que je retiens :</p>
+    <p class="card-text">La maîtrise des outils de certification (Fluke) est indispensable pour transformer une installation physique en un service fiable.</p>
+    <p class="card-text">Une bonne communication technique ne se limite pas à transmettre des données, mais à les traduire en éléments décisionnels (coûts, délais, qualité) pour le client.</p>
+  </div>
+</div>
+<br>
 <div class="container-fluid mb-12">
     <div class="row g-2">
         <div class="list-group col-6">
@@ -19,4 +51,5 @@
         </div>
     </div>
 </div>
+<br> <br>
 {% endblock %}

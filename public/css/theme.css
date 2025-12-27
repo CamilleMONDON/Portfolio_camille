@@ -28,11 +28,11 @@ body  {
     color: var(--text-color) !important;
 }
 
-
 .card-body {
     background-color: var(--card-bg) !important;
     color: var(--text-color) !important;
 }
+
 
 .dark-mode #nom {
     color: var(--text-color) !important;

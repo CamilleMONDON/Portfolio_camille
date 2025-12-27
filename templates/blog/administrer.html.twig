@@ -3,7 +3,65 @@
 {% block body %}
 
 <h1>Administrer les réseaux et l’Internet</h1>
-<p>salut</p>
+<p>Projet de référence : s’initier aux réseaux informatiques (SAé 1.02).</p>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" data-bs-toggle="tab" href="#01" aria-selected="true" role="tab"> AC11.01</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#02" aria-selected="false" tabindex="-1" role="tab">AC11.02</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#03" aria-selected="false" tabindex="-1" role="tab">AC11.03</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#04" aria-selected="false" tabindex="-1" role="tab">AC11.04</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#05" aria-selected="false" tabindex="-1" role="tab">AC11.05</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" data-bs-toggle="tab" href="#06" aria-selected="false" tabindex="-1" role="tab">AC11.06</a>
+  </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade show active" style="background-color: var(--card-bg)" id="01" role="tabpanel">
+    <h4>Maîtriser les lois fondamentales de l’électricité afin d’intervenir sur des équipements de réseaux et télécommunications (AC11.01)</h4>
+    <p> Dans le cadre de l'audit physique du réseau, j'ai dû intervenir sur des équipements actifs (switchs Cisco 2960). <br> <br> J'ai pris conscience des risques électriques liés aux équipements de réseaux et télécommunications. Mes interventions ont été réalisées en toute sécurité lors des manipulations physiques de câblage.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="02" role="tabpanel">
+    <h4>Comprendre l’architecture des systèmes numériques et les principes du codage de l’information (AC11.02)</h4>
+    <p> Sécurisation de l'accès aux équipements réseaux de l'entreprise. <br> <br> J'ai configuré les mots de passe de la ligne console, du mode d'exécution privilégié (enable) et des lignes virtuelles (VTY) sur les switchs. Je sais identifier le lien entre ces différents mots de passe et les modes d'accès correspondants. <br> <br> Pour au final avoir l'intégralité des équipements actifs est sécurisée et accessible à distance via le protocole SSH, conformément au cahier des charges.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="03" role="tabpanel">
+    <h4>Configurer les fonctions de base du réseau local (AC11.03)</h4>
+    <p>Simulation et extension du réseau local sur Cisco Packet Tracer. <br> <br> Dressage IP : Configuration et justification du plan d'adressage IPv4 (adresses, masques, passerelles) pour les nouveaux postes.<br> <br> VLANs : Création et configuration de VLANs spécifiques (VLAN 70 pour la production, 71 pour les commerciaux, 72 pour les RH) en modes access et trunk. <br> <br>Pour au final avoir une topologie fonctionnelle permettant la séparation des flux et l'adressage dynamique via un serveur DHCP.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="04" role="tabpanel">
+    <h4>Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation afin d’interagir avec ceux-ci pour la configuration et administration des réseaux et services fournis (AC11.04)</h4>
+    <p>Analyse de trames et découverte de la topologie existante. <br> <br> Analyse de trames : Utilisation de Wireshark pour analyser le trafic ICMP, ARP et CDP afin d'identifier les adresses IP actives et les équipements d'infrastructure. <br> <br>Topologie : Identification autonome de la topologie logique et physique (liaisons entre S1, S4 et le routeur) à partir des captures réseau et des fichiers de configuration. <br> <br>Pour au final avoir une cartographie précise du réseau sans documentation préalable.</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="05" role="tabpanel">
+    <h4>Identifier les dysfonctionnements du réseau local (AC11.05)</h4>
+    <p>Résolution des problèmes rencontrés lors de la mise en place du serveur de sauvegarde.<br> <br> J'ai réalisé une étude préliminaire (topologie, plan d'adressage) et utilisé des outils de diagnostic (lignes de commande, analyseurs) pour résoudre les erreurs de configuration en autonomie.<br> <br> Pour au final avoir Identification et correction d'un blocage du pare-feu Windows sur le port 69, permettant le bon fonctionnement des transferts TFTP</p>
+  </div>
+  <div class="tab-pane fade" style="background-color: var(--card-bg)" id="06" role="tabpanel">
+    <h4>Installer un poste client (AC11.06)</h4>
+    <p>Installation et configuration d'un serveur TFTP sur un poste d'administration Windows et installation de trois machines clients sous obuntu.<br> <br> Installation d'un poste client avec un protocole TCP/IPv4 correctement connecté et utilisable. J'ai su justifier mes choix d'installation, notamment pour l'application Tftpd64 et les exceptions de sécurité nécessaires. <br> <br>Pour au final avoir un poste d'administration opérationnel capable de recevoir et stocker les fichiers de configuration des switchs.</p>
+  </div>
+</div>
+<div class="card border-primary mb-6" style="max-width: 200rem;">
+  <div class="card-header text-white bg-primary">Bilan de la compétence</div>
+  <div class="card-body">
+    <p class="card-text">À travers ce projet, j'ai démontré ma capacité à cartographier un réseau existant sans documentation pour l'adapter aux besoins d'agrandissement de l'entreprise. J'ai su transformer des données brutes en une infrastructure sécurisée et évolutive.</p>
+    <p class="card-text">Ce que je retiens :</p>
+    <p class="card-text">L'analyse de trames (Wireshark) et la simulation (Packet Tracer) sont indispensables pour transformer des données brutes en une architecture fiable. </p>
+    <p class="card-text"> Une documentation technique précise est la clé pour assurer la maintenance et l'évolution future du parc informatique.</p>
+    <p class="card-text"> La protection des accès (SSH) et l'isolation des flux par VLANs sont des priorités absolues pour sécuriser l'entreprise.</p>
+    <p class="card-text"> L'autonomie face aux pannes, comme la configuration du pare-feu pour le service TFTP, est cruciale pour garantir la disponibilité des services.</p>
+  </div>
+</div>
+<br>
 
 <div class="container-fluid mb-12">
     <div class="row g-2">
@@ -19,6 +77,6 @@
         </div>
     </div>
 </div>
-
+<br> <br>
 
 {% endblock %}
